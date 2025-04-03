@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palga kalkulaator</title>
+  </head>
+  <body>
+    <p>Palga Kalkulaator</p>
+
+    <p id="grossSalary"></p>
+    <p id="netSalary"></p>
+    <p id="taxFreeIncome"></p>
+    <p id="retirementSavings"></p>
+    <p id="incomeTax"></p>
+    <p id="unemploymentTax"></p>
+    <p id="taxableIncome"></p>
+  </body>
+  <script>
+    let grossSalary = 10000;
+    let retirementSavings = grossSalary * 0.02;
+    let unemploymentTax = grossSalary * 0.016;
+    let taxFreeIncome = 7848 - (7848 / 10800) * (grossSalary - 14400);
+    if (taxFreeIncome < 0) taxFreeIncome = 0;
+    if (taxFreeIncome > 7848) taxFreeIncome = 7848;
+    let taxableIncome = grossSalary - taxFreeIncome;
+    let incomeTax =
+      (grossSalary - taxFreeIncome - retirementSavings - unemploymentTax) *
+      0.22;
+    let netSalary =
+      grossSalary - incomeTax - retirementSavings - unemploymentTax;
+
+    document.getElementById("grossSalary").innerHTML =
+      "Brutopalk on: " + grossSalary;
+    document.getElementById("taxFreeIncome").innerHTML =
+      "Tulumaksuvaba summa on: " + taxFreeIncome.toFixed(2);
+    document.getElementById("retirementSavings").innerHTML =
+      "Pensionisäästud: " + retirementSavings.toFixed(2);
+    document.getElementById("incomeTax").innerHTML =
+      "Tulumaks: " + incomeTax.toFixed(2);
+    document.getElementById("unemploymentTax").innerHTML =
+      "Töötuskindlustus: " + unemploymentTax.toFixed(2);
+    document.getElementById("netSalary").innerHTML =
+      "Netopalk on: " + netSalary.toFixed(2);
+  </script>
+</html>

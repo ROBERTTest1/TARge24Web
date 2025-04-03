@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Operators</title>
+  </head>
+  <body>
+    <p>Liitmine</p>
+    <p id="add"></p>
+    <p id="minus"></p>
+    <p id="divison"></p>
+    <p id="multiply"></p>
+    <p id="reminder"></p>
+    <p id="increment"></p>
+    <p id="incrementAfter"></p>
+  </body>
+  <script>
+    let y = 5;
+    let x = y + 5;
+    document.getElementById("add").innerHTML = "Tulemus on liitmisel: " + x;
+
+    let minus = y - 7;
+    document.getElementById("minus").innerHTML =
+      "Tulemus on lahutamisel: " + minus;
+
+    let divison = y / 4;
+    document.getElementById("divison").innerHTML =
+      "Tulemus on jagamisel: " + divison;
+
+    let multiply = y * 4;
+    document.getElementById("multiply").innerHTML =
+      "Tulemus on korrutamisel: " + multiply;
+
+    let reminder = y % 2;
+    document.getElementById("reminder").innerHTML =
+      "Tulemus on jäägi puhul: " + reminder;
+
+    let increment = ++y;
+    document.getElementById("increment").innerHTML =
+      "Tulemus on lisamise puhul: " + increment;
+
+    let incrementAfter = y++;
+    document.getElementById("incrementAfter").innerHTML =
+      "Tulemus on pärast lisamise operaatori puhul: " + incrementAfter;
+  </script>
+</html>
